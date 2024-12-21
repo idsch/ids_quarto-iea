@@ -1,0 +1,111 @@
+
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/2024/quarto_oc/erd_oc_esr/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+---
+
+
+```{r}
+cciea_yr <- 2024
+
+ds_id <- 'cciea_OC_NPH'	   
+ts_id_list = list('cciea_OC_NPH')
+source("script_region.R")
+ds_id_nph <- ds_id
+vec2_nph <- vec2
+ds_id_lbl_nph <- ds_id_lbl
+rgn_lbl_nph <- rgn_lbl
+
+ds_id <- 'cciea_OC_NPH_Jan_Feb'	   
+ts_id_list = list('cciea_OC_NPH_JF')
+source("script_region.R")
+ds_id_jf <- ds_id
+vec2_jf <- vec2
+ds_id_lbl_jf <- ds_id_lbl
+rgn_lbl_jf <- rgn_lbl
+
+
+
+```
+
+
+# North Pacific High Indicators
+
+**Description** 
+Variations in the areal extent of the North Pacific High (NPH) during the winter is predictive of winter upwelling.
+The January and February average of the NPH area can be used as a "preconditioning" index for ecosystem responses in the spring.
+
+
+**Indicator Category** `{r} vec2_nph[['Component_Section']]`
+ 
+**Data Steward** `{r} vec2_nph[['PI']]`
+
+**Erddap Dataset ID**
+
++ *Jan-Feb NPH*   &nbsp; &nbsp;  &nbsp;  `{r} ds_id_jf`
++ *NPH*   &nbsp; &nbsp;  `{r} ds_id_nph`
+
+**CCIEA timeseries ID** 
+
++ *Jan-Feb NPH*  &nbsp; &nbsp;  &nbsp; &nbsp; `{r} ds_id_lbl_jf`
++ *NPH*  &nbsp; &nbsp;  &nbsp;  `{r} ds_id_lbl_nph`
+
+
+**Region**
+
++  *Jan-Feb NPH* &nbsp; &nbsp;  &nbsp; &nbsp; `{r} rgn_lbl_jf`
++  *NPH*  &nbsp; &nbsp;  &nbsp; `{r} rgn_lbl_nph`
+
+**Additional Information**
+During the winter, periods of upwelling or, farther north, reduced downwelling can limit stratification and facilitate introduction of nutrients to the surface, acting to precondition the ecosystem for increased production in the spring [@Schroeder2009; @Black2010]. The area of sea level pressure associated with the North Pacific High (NPH) can be used as an index of this winter preconditioning [@Schroeder2013]. 
+
+
+**Figures**
+
+::: {#fig-nph_jf}
+![](plots/oc_nph_jf_Annual.png){width=80%}
+
+Area of high atmospheric pressure of the North Pacific High averaged over January and February. 
+The area is the areal extent of the 1020 hPa isobar located in the eastern North Pacific [@Schroeder2013].
+FNMOC six-hourly data used to find the area of the NPH is available at https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdlasFnPres6. 
+:::
+
+<br>
+<br>
+<br>
+
+::: {#fig-nph_M}
+
+![](plots/oc_nph_Month.png){width=80%}
+
+Monthly values of the North Pacific High (NPH) area starting 1967 and ending: November `{r} cciea_yr`. 
+
+:::
+
+<br>
+<br>
+<br>
+
+
+
+::: {#fig-nph_S}
+
+![](plots/oc_nph_Season.png){width=50%}
+
+Seasonal values of the North Pacific High (NPH) area starting 1967 and ending `{r} cciea_yr`. 
+
+:::
+
+
+
+
+**`{r} cciea_yr` Conditions**
+
++ The Jan-Feb NPH area was low during 2024, which is usual during an El Niño @fig-nph_jf.
++ With small Jan-Feb NPH area we would expect to see in central California coastal krill production down, lower rockfish growth, and delayed murre and auklet egg-laying dates [@Schroeder2009]
++ The Jan-Feb NPH area was large over 2020-23, resulting in negative 5-year trend due to the low 2024 value.
+
+**References**

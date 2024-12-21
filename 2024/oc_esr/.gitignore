@@ -1,0 +1,10 @@
+*~
+*.pyc
+*.txt
+*.csv
+*.png
+*.tex
+*.bbl
+*.nc
+/plots/
+

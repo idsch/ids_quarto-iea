@@ -1,0 +1,105 @@
+
+
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/2024/quarto_oc/erd_oc_esr/esr-bibliography.bib
+format:
+ html: 
+  code-fold: true
+---
+
+
+```{r}
+cciea_yr <- 2024
+
+```
+
+
+# SST anoms, 5-year means and trends
+
+**Description** 
+Seasonal SST summary maps are derived from the three statistics shown in the IEA type time series (current value, mean and trend over the last 5 years). 
+The current value is shown as an anomaly and the 5-year mean and trend are 
+
+
+**Indicator Category** Climate and Ocean Drivers
+ 
+**Data Steward** Schroeder
+
+**Erddap Dataset ID**
+
+**CCIEA timeseries ID** 
+
+**Region**
+
+
+**Additional Information**
+The seasonal averages are: winter (Jan-Mar), spring (Apr-Jun), summer (Jul-Sep), and summer (Oct-Nov).
+Daily SST maps are optimally interpolated, remotely sensed temperatures [@Huang2021]. 
+The daily optimal interpolated AVHRR SST can be downloaded from ERDDAP, https://coastwatch.pfeg.noaa.gov/erddap/index.html, dataset ID: ncdcOisst21Agg.
+
+**Figures**
+
+::: {#fig-sst_spatial_winter}
+![](plots/oc_sst_spatial_winter_clim_1982_current_year.png){width=100%}
+
+Sea surface temperature (SST) anomalies (`{r} cciea_yr`; left), five-year means (2019–`{r} cciea_yr`; middle), and five-year trends (2019–`{r} cciea_yr`; right) in winter (Jan–Mar; top) and summer (Jul–Sep; bottom). 
+The time series at each grid point began in 1982. 
+Black circles mark cells where the anomaly was >1 SD above the long-term mean. Black x’s mark cells where the anomaly was the highest (or lowest) of the time series. 
+:::
+
+::: {#fig-sst_spatial_spring}
+![](plots/oc_sst_spatial_spring_clim_1982_current_year.png){width=100%}
+
+Same as @fig-sst_spatial_winter but for spring `{r} cciea_yr`.
+:::
+
+::: {#fig-sst_spatial_summer}
+![](plots/oc_sst_spatial_summer_clim_1982_current_year.png){width=100%}
+
+Same as @fig-sst_spatial_summer but for summer `{r} cciea_yr`.
+:::
+
+::: {#fig-sst_spatial_fall}
+![](plots/oc_sst_spatial_fall_clim_1982_current_year.png){width=100%}
+
+Same as @fig-sst_spatial_winter but for fall `{r} cciea_yr`.
+:::
+
+**Diagnositc maps with time series at key locations**
+
+Understanding the anoms, 5-year means and trends can be difficult without looking at time series.
+Below are diagnostic plots that have IEA time series at key locations on the maps.
+
+[Winter anoms](plots/winter/winter_anom_example_ts.png){.lightbox} &nbsp; &nbsp; 
+[Winter 5-year means](plots/winter/winter_mean5_example_ts.png){.lightbox} &nbsp; &nbsp; 
+[Winter 5-year trends](plots/winter/winter_trend5_example_ts.png){.lightbox}
+
+[Spring anoms](plots/spring/spring_anom_example_ts.png){.lightbox} &nbsp; &nbsp; 
+[Spring 5-year means](plots/spring/spring_mean5_example_ts.png){.lightbox} &nbsp; &nbsp; 
+[Spring 5-year trends](plots/spring/spring_trend5_example_ts.png){.lightbox}
+
+[Summer anoms](plots/summer/summer_anom_example_ts.png){.lightbox} &nbsp; &nbsp; 
+[Summer 5-year means](plots/summer/summer_mean5_example_ts.png){.lightbox} &nbsp; &nbsp; 
+[Summer 5-year trends](plots/summer/summer_trend5_example_ts.png){.lightbox}
+
+[Fall anoms](plots/fall/fall_anom_example_ts.png){.lightbox} &nbsp; &nbsp; 
+[Fall 5-year means](plots/fall/fall_mean5_example_ts.png){.lightbox} &nbsp; &nbsp; 
+[Fall 5-year trends](plots/fall/fall_trend5_example_ts.png){.lightbox}
+
+
+
+
+
+
+
+
+**`{r} cciea_yr` Conditions**
+
++ Winter SST anomalies were positive (above 1°C) along the coast, the usual pattern for an El Niño winter @fig-sst_spatial_winter.
++ Summer SST anomalies were negative in the north and south (~1°C) and slightly above average (~0.5°C) in central California @fig-sst_spatial_summer.
++ Summer SST anomalies offshore were positve near the highest of the time series for the area centered on 45°N - 140°W @fig-sst_spatial_summer.
++ NOTE: Fall seasonal averages are not complete, they still need to be updated to include December.
+
+
+**References**
