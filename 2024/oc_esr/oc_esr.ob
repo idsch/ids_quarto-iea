@@ -1,0 +1,632 @@
+#+latex_header: \usepackage{natbib}
+#+options: toc:nil
+#+OPTIONS: num:nil
+#+OPTIONS: ^:nil
+#+latex_header: \hypersetup{colorlinks=true,linkcolor=blue}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+TITLE: Ocean Conditions 2024
+#+AUTHOR: Isaac D. Schroeder
+#+ATTR_LATEX: :options [noitemsep]
+#+bibliography: /home/isaac/Documents/org_ref/references.bib
+
+
+* Background
+Compiling figures of updated indices. 
+* Code
+
+
+* QMD files
+
+1. Index
+   + <2024-12-22 Sun>
+#+begin_src text :tangle index.qmd
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/2024/quarto_oc/erd_oc_esr/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+---
+
+
+# Preface {.unnumbered}
+
+Yearly update of I Environment Assessment.
+
+#+end_src
+
+2. [@2] Basin
+   + <2024-12-22 Sun>
+   + 
+#+begin_src text :tangle BasinScaleIndicators.qmd
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/2024/quarto_oc/erd_oc_esr/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+  self-contained: true
+---
+
+
+```{r}
+cciea_yr <- 2024
+
+ds_id <- 'cciea_OC_ONI'	   
+ts_id_list = list('cciea_OC_ONI')
+source("script_region.R")
+ds_id_oni <- ds_id
+vec2_oni <- vec2
+ds_id_lbl_oni <- ds_id_lbl
+rgn_lbl_oni <- rgn_lbl
+
+
+ds_id <- 'cciea_OC_PDO'	   
+ts_id_list = list('cciea_OC_PDO')
+source("script_region.R")
+ds_id_pdo <- ds_id
+vec2_pdo <- vec2
+ds_id_lbl_pdo <- ds_id_lbl
+rgn_lbl_pdo <- rgn_lbl
+
+ds_id <- 'cciea_OC_NPGO'	   
+ts_id_list = list('cciea_OC_NPGO')
+source("script_region.R")
+ds_id_npgo <- ds_id
+vec2_npgo <- vec2
+ds_id_lbl_npgo <- ds_id_lbl
+rgn_lbl_npgo <- rgn_lbl
+
+
+
+```
+
+
+# Basin-Scale Indicators
+
+**Description**  &nbsp; &nbsp;
+The CCLME is driven by atmosphere–ocean energy exchange that occurs on many temporal and spatial scales. 
+Large-scale variability is represented by three indices: the status of the equatorial El Niño–Southern Oscillation (ENSO), described by the Oceanic Niño Index (ONI, <https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php>); the Pacific Decadal Oscillation [PDO, @Mantua1997]; and the North Pacific Gyre Oscillation [NPGO, @DiLorenzo2008]. 
+Positive ONI and PDO values and negative NPGO values usually denote conditions that lead to low CCLME productivity, whereas negative ONI and PDO values and positive NPGO values are associated with periods of high CCE productivity. 
+
+
+**Indicator Category**  &nbsp; &nbsp; `{r} vec2_oni[['Component_Section']]`
+ 
+**Data Steward**  &nbsp; &nbsp; `{r} vec2_oni[['PI']]`
+
+**Erddap Dataset ID**   &nbsp; &nbsp; `{r} ds_id_oni`, `{r} ds_id_pdo`, `{r} ds_id_npgo`
+
+**CCIEA timeseries ID**   &nbsp; &nbsp; `{r} ds_id_lbl_oni`, `{r} ds_id_lbl_pdo`, `{r} ds_id_lbl_npgo`
+
+**Region**  &nbsp; &nbsp; `{r} rgn_lbl_oni`, `{r} rgn_lbl_pdo`, `{r} rgn_lbl_npgo`
+
+**Additional Information**
+
+ENSO events impact the CCLME by modifying the jet stream and storm tracks, changing the nearshore thermocline, and influencing coastal currents that affect poleward transport and distribution of equatorial and subequatorial waters (and species). A positive ONI greater than 0.5°C indicates El Niño conditions, which usually means more storms to the south, weaker upwelling, and lower primary productivity in the CCLME. A negative ONI less than -0.5°C means La Niña conditions, which usually lead to higher productivity. 
+
+The PDO is related to sea surface temperature (SST), and is derived from sea surface temperature anomalies (SSTa) in the Northeast Pacific, which often persist in “regimes” that last for many years. In positive PDO regimes, coastal SSTa along North American tend to be warmer, while those in the central North Pacific tend to be cooler. Positive PDO values are associated with lower productivity in the CCLME. 
+
+The NPGO is a low-frequency variation of sea surface height, indicating variations in the circulation of the North Pacific Subtropical Gyre and the Alaskan Gyre, which in turn relate to the source waters for the CCLME. Positive NPGO values are associated with increased equatorward flow, along with increased surface salinities, nutrients, and chlorophyll-a. Negative NPGO values are associated with decreases in such values, implying less subarctic source water and generally lower productivity. 
+
+Oceanic Niño Index information and data are from the NOAA Climate Prediction Center (<https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php>). 
+Pacific Decadal Oscillation data are from N. Mantua, NMFS/SWFSC, and are served on the CCIEA ERDDAP server (<https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_OC_PDO.html>). 
+North Pacific Gyre Oscillation data are from E. Di Lorenzo, Brown University (<https://www.o3d.org/npgo/index.html>).
+
+
+**Figures**
+
+::: {#fig-oni_pdo_npgo_M}
+![](plots/oc_ONI_PDO_NPGO_Monthly.png){width=70%}
+
+Monthly values of the Oceanic Niño Index (ONI), the Pacific Decadal Oscillation (PDO), and the North Pacific Gyre Oscillation (NPGO), starting 1950 and ending: October `{r} cciea_yr` (ONI), November `{r} cciea_yr` (PDO), and October `{r} cciea_yr` (NPGO). 
+
+
+:::
+
+<br>
+<br>
+<br>
+
+::: {#fig-oni_pdo_npgo_S layout-ncol=3, layout="[50,-1,50,-1,50]"  }
+
+![ONI](plots/oc_ONI_Season.png){#fig-oni_S}
+
+![PDO](plots/oc_PDO_Season.png){#fig-pdo_S}
+
+![NPGO](plots/oc_NPGO_Season.png){#fig-npgo_S}
+
+Seasonal values of the Oceanic Niño Index (ONI), Pacific Decadal Oscillation (PDO), North Pacific Gyre Oscillation (NPGO) from 1950-`{r} cciea_yr`. 
+
+:::
+
+**`{r} cciea_yr` Conditions**
+
++ @fig-oni_pdo_npgo_M and @fig-oni_pdo_npgo_S show monthly and seasonal means of the three indices.
++ El Niño event spanned the winter and spring 2023-24 and ENSO neutral by summer 2024 (@fig-oni_pdo_npgo_M and @fig-oni_S).
++ Short duration La Niña conditions are expected by Jan 2024 (59% chance), with a quick transition to ENSO neutral by March-May 2024 (61% chance), see <https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/>.
++ PDO and NPGO both have the 5-year mean below 1 standard deviation (@fig-oni_pdo_npgo_M), with the PDO having a negative 5-year trend.
+
+**References**
+
+#+end_src
+
+
+3. [@3] NPH
+   + <2024-12-22 Sun>
+   + 
+#+begin_src text :tangle JanFebNPH.qmd
+
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+---
+
+
+```{r}
+cciea_yr <- 2024
+
+ds_id <- 'cciea_OC_NPH'	   
+ts_id_list = list('cciea_OC_NPH')
+source("script_region.R")
+ds_id_nph <- ds_id
+vec2_nph <- vec2
+ds_id_lbl_nph <- ds_id_lbl
+rgn_lbl_nph <- rgn_lbl
+
+ds_id <- 'cciea_OC_NPH_Jan_Feb'	   
+ts_id_list = list('cciea_OC_NPH_JF')
+source("script_region.R")
+ds_id_jf <- ds_id
+vec2_jf <- vec2
+ds_id_lbl_jf <- ds_id_lbl
+rgn_lbl_jf <- rgn_lbl
+
+
+
+```
+
+
+# North Pacific High Indicators
+
+**Description** 
+Variations in the areal extent of the North Pacific High (NPH) during the winter is predictive of winter upwelling.
+The January and February average of the NPH area can be used as a "preconditioning" index for ecosystem responses in the spring.
+
+
+**Indicator Category** &nbsp; &nbsp; 
+`{r} vec2_nph[['Component_Section']]`
+ 
+**Data Steward** &nbsp; &nbsp; 
+`{r} vec2_nph[['PI']]`
+
+**Erddap Dataset ID** &nbsp;  &nbsp;
+`{r} ds_id_jf`,  `{r} ds_id_nph`
+
+**CCIEA timeseries ID** &nbsp; &nbsp; 
+`{r} ds_id_lbl_jf`,  `{r} ds_id_lbl_nph`
+
+**Region** &nbsp; &nbsp; 
+`{r} rgn_lbl_jf`, `{r} rgn_lbl_nph`
+
+**Public availability statement** &nbsp; &nbsp; 
+Source data are publicly available.
+
+**Data sources** &nbsp; &nbsp
+The  U.S. Navy Fleet Numerical Meteorology and Oceanography Center (FNMOC) to take advantage of the Navy's global oceanographic and meteorological databases. 
+FNMOC produces operational forecasts of the state of the atmosphere and the ocean several times daily and maintains archives of several important parameters, such as sea level
+pressure and temperature.
+The NPH area is derived from FNMOC Sea Level Pressure (SLP) monthly means.
+The SLP data are available at <https://upwell.pfeg.noaa.gov/erddap/griddap/erdlasFnWPr.html>.
+
+**Additional Information** &nbsp; &nbsp
+During the winter, periods of upwelling or, farther north, reduced downwelling can limit stratification and facilitate introduction of nutrients to the surface, acting to precondition the ecosystem for increased production in the spring [@schroeder2009; @black2010]. The area of sea level pressure associated with the North Pacific High (NPH) can be used as an index of this winter preconditioning [@schroeder2013]. 
+
+
+
+**Figures**
+
+::: {#fig-nph_jf}
+![](plots/oc_nph_jf_Annual.png){width=80%}
+
+Area of high atmospheric pressure of the North Pacific High averaged over January and February. 
+The area is the areal extent of the 1020 hPa isobar located in the eastern North Pacific [@schroeder2013].
+FNMOC six-hourly data used to find the area of the NPH is available at <https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdlasFnPres6>.
+:::
+
+<br>
+<br>
+<br>
+
+::: {#fig-nph_M}
+
+![](plots/oc_nph_Month.png){width=80%}
+
+Monthly values of the North Pacific High (NPH) area starting 1967 and ending: November `{r} cciea_yr`. 
+
+:::
+
+<br>
+<br>
+<br>
+
+
+
+::: {#fig-nph_S}
+
+![](plots/oc_nph_Season.png){width=40%}
+
+Seasonal values of the North Pacific High (NPH) area starting 1967 and ending `{r} cciea_yr`. 
+
+:::
+
+
+
+
+**`{r} cciea_yr` Conditions**
+
++ The Jan-Feb NPH area was low during 2024, which is usual during an El Niño @fig-nph_jf.
++ With small Jan-Feb NPH area we would expect to see in central California coastal krill production down, lower rockfish growth, and delayed murre and auklet egg-laying dates [@schroeder2009]
++ The Jan-Feb NPH area was large over 2020-23, resulting in negative 5-year trend due to the low 2024 value.
+
+**References**
+
+#+end_src
+
+3. [@3] SST spatial
+   + <2024-12-22 Sun>
+   + 
+#+begin_src text :tangle SSTspatial.qmd
+
+
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/2024/quarto_oc/erd_oc_esr/esr-bibliography.bib
+format:
+ html: 
+  code-fold: true
+---
+
+
+```{r}
+cciea_yr <- 2024
+
+```
+
+
+# SST anoms, 5-year means and trends
+
+**Description** 
+Seasonal SST summary maps are derived from the three statistics shown in the IEA type time series (current value, mean and trend over the last 5 years). 
+The current value is shown as an anomaly and the 5-year mean and trend are 
+
+
+**Indicator Category** Climate and Ocean Drivers
+ 
+**Data Steward** Schroeder
+
+**Erddap Dataset ID**
+
+**CCIEA timeseries ID** 
+
+**Region**
+
+
+**Additional Information**
+The seasonal averages are: winter (Jan-Mar), spring (Apr-Jun), summer (Jul-Sep), and summer (Oct-Nov).
+Daily SST maps are optimally interpolated, remotely sensed temperatures [@Huang2021]. 
+The daily optimal interpolated AVHRR SST can be downloaded from ERDDAP, https://coastwatch.pfeg.noaa.gov/erddap/index.html, dataset ID: ncdcOisst21Agg.
+
+**Figures**
+
+::: {#fig-sst_spatial layout-ncol=1, layout="[[1],[1],[1],[1]]"  }
+
+![Winter](plots/oc_sst_spatial_winter_clim_1982_current_year.png){#fig-sst_spatial_winter}
+
+![Spring](plots/oc_sst_spatial_spring_clim_1982_current_year.png){#fig-sst_spatial_spring}
+
+![Summer](plots/oc_sst_spatial_summer_clim_1982_current_year.png){#fig-sst_spatial_summer}
+
+![Fall](plots/oc_sst_spatial_fall_clim_1982_current_year.png){#fig-sst_spatial_fall}
+
+Sea surface temperature (SST) anomalies (`{r} cciea_yr`; left), five-year means (2019–`{r} cciea_yr`; middle), and five-year trends (2019–`{r} cciea_yr`; right) in winter (a, Jan-Mar), spring (b, Apr-Jun), summer (c, Jul–Sep), and fall (d, Oct-Dec). 
+The time series at each grid point began in 1982. 
+Black circles mark cells where the anomaly was >1 SD above the long-term mean. Black x’s mark cells where the anomaly was the highest (or lowest) of the time series. 
+
+
+:::
+
+**Diagnositc maps with time series at key locations**
+
+::: {#fig-sst_spatial layout-ncol=3, layout="[[4,4,4], [4,4,4], [4,4,4], [4,4,4]]"  }
+
+![Winter `{r} cciea_yr` Anom](plots/winter/winter_anom_example_ts.png){#fig-ts_anom_winter}
+
+![Winter `{r} cciea_yr-4` - `{r} cciea_yr` Mean](plots/winter/winter_mean5_example_ts.png){#fig-ts_mean_winter}
+
+![Winter `{r} cciea_yr-4` - `{r} cciea_yr` Trend](plots/winter/winter_trend5_example_ts.png){#fig-ts_trend_winter}
+
+![Spring `{r} cciea_yr` Anom](plots/spring/spring_anom_example_ts.png){#fig-ts_anom_spring}
+
+![Spring `{r} cciea_yr-4` - `{r} cciea_yr` Mean](plots/spring/spring_mean5_example_ts.png){#fig-ts_mean_spring}
+
+![Spring `{r} cciea_yr-4` - `{r} cciea_yr` Trend](plots/spring/spring_trend5_example_ts.png){#fig-ts_trend_spring}
+
+![Summer `{r} cciea_yr` Anom](plots/summer/summer_anom_example_ts.png){#fig-ts_anom_summer}
+
+![Summer `{r} cciea_yr-4` - `{r} cciea_yr` Mean](plots/summer/summer_mean5_example_ts.png){#fig-ts_mean_summer}
+
+![Summer `{r} cciea_yr-4` - `{r} cciea_yr` Trend](plots/summer/summer_trend5_example_ts.png){#fig-ts_trend_summer}
+
+![Fall `{r} cciea_yr` Anom](plots/fall/fall_anom_example_ts.png){#fig-ts_anom_fall}
+
+![Fall `{r} cciea_yr-4` - `{r} cciea_yr` Mean](plots/fall/fall_mean5_example_ts.png){#fig-ts_mean_fall}
+
+![Fall `{r} cciea_yr-4` - `{r} cciea_yr` Trend](plots/fall/fall_trend5_example_ts.png){#fig-ts_trend_fall}
+
+
+
+
+Understanding the anoms, 5-year means and trends can be difficult without looking at time series.
+These are diagnostic plots that have IEA time series at key locations on the maps.
+
+
+:::
+
+
+
+**`{r} cciea_yr` Conditions**
+
++ Winter SST anomalies were positive (above 1°C) along the coast, the usual pattern for an El Niño winter @fig-sst_spatial_winter.
++ Summer SST anomalies were negative in the north and south (~1°C) and slightly above average (~0.5°C) in central California @fig-sst_spatial_summer.
++ Summer SST anomalies offshore were positve near the highest of the time series for the area centered on 45°N - 140°W @fig-sst_spatial_summer.
++ NOTE: Fall seasonal averages are not complete, they still need to be updated to include December @fig-sst_spatial_fall.
+
+
+**References**
+
+#+end_src
+
+4. [@4] MHW
+   + <2024-12-22 Sun>
+   + 
+#+begin_src text :tangle MarineHeatwaves.qmd
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib
+format:
+  html: 
+    code-fold: true
+---
+
+```{r}
+cciea_yr <- 2024
+
+ds_id <- 'cciea_OC_MHW'	   
+ts_id_list = list('cciea_OC_MHW_HC')
+source("script_region.R")
+ds_id_hc <- ds_id
+vec2_hc <- vec2
+ds_id_lbl_hc <- ds_id_lbl
+rgn_lbl_hc <- rgn_lbl
+
+ds_id <- 'cciea_OC_MHW'	   
+ts_id_list = list('cciea_OC_MHW_MA')
+source("script_region.R")
+ds_id_ma <- ds_id
+vec2_ma <- vec2
+ds_id_lbl_ma <- ds_id_lbl
+rgn_lbl_ma <- rgn_lbl
+
+ds_id <- 'cciea_OC_MHW'	   
+ts_id_list = list('cciea_OC_MHW_MI')
+source("script_region.R")
+ds_id_mi <- ds_id
+vec2_mi <- vec2
+ds_id_lbl_mi <- ds_id_lbl
+rgn_lbl_mi <- rgn_lbl
+
+
+```
+
+
+# Marine Heatwaves
+
+**Description** 
+Marine heatwaves (MHW) occur when ocean temperatures are much warmer than usual for an extended period of time; they are specifically defined by the difference between the current temperature and the expected temperature for a specific location and time of year [1]. MHWs are a growing field of study worldwide because of their effects on ecosystem structure, biodiversity, and regional economies.
+
+**Indicator Category**  &nbsp; &nbsp; `{r} vec2_mi[['Component_Section']]`
+ 
+**Data Steward**  &nbsp; &nbsp; `{r} vec2_mi[['PI']]`
+
+**Erddap Dataset ID**  &nbsp; &nbsp; `{r} ds_id_hc`, `{r} ds_id_ma`, `{r} ds_id_mi`
+
+
+**CCIEA timeseries ID**  &nbsp; &nbsp; `{r} ds_id_lbl_hc`,  `{r} ds_id_lbl_ma`, `{r} ds_id_lbl_mi`
+
+**Region** &nbsp; &nbsp;  `{r} rgn_lbl_hc`, `{r} rgn_lbl_ma`, `{r} rgn_lbl_mi`
+
+
+**Additional Information**
+
+There is growing recognition that marine heatwaves can have strongly disruptive impacts on the CCE [@morgan2019recent].
+Based on an analysis of sea surface temperature anomalies (SSTa) obtained from satellite measurements (OISST); we define marine heatwaves as 1.0 times when normalized SSTa \>1.29 s.d. (90th percentile) of the long-term SSTa time series at a location, and 2. lasts for \>5 days; which are analogous to the thresholds suggested in @hobday2016hierarchical. 
+Here, we further report on statistics concerning large heatwaves (LHW) which were tracked through space and time, with LHW defined as those heatwaves with an area \> 400,000 km2 (these denote the top 20% of all heatwaves by area as measured since 1982 when satellite data became available for tracking.
+
+The underlying climatology used for SST anomaly analysis has changed from 1982-2010, to now encompass 1982-2020; hence small changes in the retrospective analysis of tracked heatwaves reported more recently as compared to previous reports.
+
+
+**Figures**
+
+::: {#fig-mhw_M}
+![](plots/oc_mhw_heatwave_cover_sum_area_intensity_Monthly.png){width=70%}
+
+
+
+
+:::
+
+<br>
+<br>
+<br>
+
+::: {#fig-mhw_S layout-ncol=3, layout="[50,-1,50,-1,50]"  }
+
+![Heatwave Cover](plots/oc_mhw_heatwave_cover_Season.png){#fig-mhw_hc_S}
+
+![Sum Area](plots/oc_mhw_sum_area_Season.png){#fig-mhw_ma_S}
+
+![Intensity](plots/oc_mhw_intensity_Season.png){#fig-mhw_mi_S}
+
+
+Seasonal averages of the monthly MHW time series.
+:::
+
+**`{r} cciea_yr` Conditions**
+
++ Monthly MHW sum area @fig-mhw_M was above the long-term mean during summer and fall 2024.
++ Winter, Spring and Summer MHW sum area @fig-mhw_ma_S had 2024 values lower than 2023.
++ Heat wave cover during the winter 2024 @fig-mhw_hc_S was above 1 sd, this probably can be attributed to El Niño elevating coastal temperatures @fig-sst_spatial_winter.
+
+**References**
+
+#+end_src
+
+5. [@5] HCI
+   + <2024-12-22 Sun>
+   + 
+#+begin_src text :tangle HabitatCompressionIndex.qmq
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+  self-contained: true
+---
+
+# Habitat Compression Index
+
+
+```{r}
+cciea_yr <- 2024
+ds_id <- 'cciea_OC_HCI'	   
+ts_id_list = list('cciea_OC_HCI1', 'cciea_OC_HCI2', 'cciea_OC_HCI3', 'cciea_OC_HCI4')
+
+
+# Source some local code
+source("script_region.R")
+
+```
+**Description** The Habitat Compression Index (HCI) is the area of cool habitat along the coast, which is suitable for a diverse and productive portion of the CCE food web. HCI is estimated in four biogeographic provinces along the shelf within the CCE.
+
+**Metafile name** `{r} fn_meta`
+ 
+**Indicator Category** `{r} vec2[['Component_Section']]`
+ 
+**Data Steward** `{r} vec2[['PI']]`
+
+**Erddap Dataset ID** `{r} ds_id`
+
+**CCIEA timeseries ID** `{r} ds_id_lbl`
+
+**Region** `{r} rgn_lbl`
+
+
+**Public availability statement** Source data are publicly available.
+
+**Data sources** Surface temperature data are the 2 m temperature levels of the University of California Santa Cruz 31-year historical reanalysis (<https://oceanmodeling.ucsc.edu/reanalccs31/>) and near-real-time (NRT; <https://oceanmodeling.ucsc.edu/ccsnrt/>) data-assimilative models.
+
+
+**Additional Information**
+
+@santora2020habitat
+
+@schroeder2022
+
+**Figures**
+
+
+::: {#fig-mhw_S layout-ncol=1, layout="[[1], [1], [1], [1]]"  }
+
+![Region 1 (43.5-48°N)](plots/oc_hci_rgn1_Month.png){#fig-hci1_M}
+
+![Region 2 (40-43.5°N)](plots/oc_hci_rgn2_Month.png){#fig-hci2_M}
+
+![Region 3 (35.5-40°N)](plots/oc_hci_rgn3_Month.png){#fig-hci3_M}
+
+![Region 4 (30-35.5°N)](plots/oc_hci_rgn4_Month.png){#fig-hci4_M}
+
+Monthly habitat compression index (HCI) for January 1980 to November `{r} cciea_yr`. 
+The index describes the contraction and expansion of cool shelf habitat between the latitude range and from the coast out to 150 km offshore. 
+Each month the area of water below a temperature threshold is calculated where a value of 0 represents no cool water in the region and a value of 1 indicates the whole area is comprised of cool water. 
+Monthly resolved temperature thresholds are the spatial mean of temperature values between the latitude range and from the coast out to 75 km offshore over a climatological time period of 1980-2010.
+:::
+
+
+
+
+**`{r} cciea_yr` Conditions**
+
+
+#+end_src
+
+6. [@6] NH and CalCOFI time-depth temp
+   + <2024-12-22 Sun>
+   + 
+#+begin_src text :tangle DepthTimeTemp.qmd
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+  self-contained: true
+---
+
+# Newport and CalCOFI time-depth
+
+```{r}
+cciea_yr <- 2024
+
+
+
+ds_id <- 'cciea_OC_ARG'
+ts_id_list = list('cciea_OC_ARG1', 'cciea_OC_ARG2')
+
+
+# Source some local code
+source("script_region.R")
+
+```
+
+**Description** The Habitat Compression Index (HCI) is the area of cool habitat along the coast, which is suitable for a diverse and productive portion of the CCE food web. HCI is estimated in four biogeographic provinces along the shelf within the CCE.
+
+**Metafile name** `{r} fn_meta`
+ 
+**Indicator Category** `{r} vec2[['Component_Section']]`
+ 
+**Data Steward** `{r} vec2[['PI']]`
+
+**Erddap Dataset ID** NA
+
+**CCIEA timeseries ID** NA
+
+**Region** `{r} rgn_lbl`
+
+
+**Public availability statement** Source data are publicly available.
+
+**Data sources** 
+
+
+**Additional Information**
+
+
+
+**Figures**
+
+#+end_src
+

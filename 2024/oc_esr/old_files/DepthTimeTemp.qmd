@@ -1,0 +1,50 @@
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+  self-contained: true
+---
+
+# Newport and CalCOFI time-depth
+
+```{r}
+cciea_yr <- 2024
+
+
+
+ds_id <- 'cciea_OC_ARG'
+ts_id_list = list('cciea_OC_ARG1', 'cciea_OC_ARG2')
+
+
+# Source some local code
+source("script_region.R")
+
+```
+
+**Description** The Habitat Compression Index (HCI) is the area of cool habitat along the coast, which is suitable for a diverse and productive portion of the CCE food web. HCI is estimated in four biogeographic provinces along the shelf within the CCE.
+
+**Metafile name** `{r} fn_meta`
+ 
+**Indicator Category** `{r} vec2[['Component_Section']]`
+ 
+**Data Steward** `{r} vec2[['PI']]`
+
+**Erddap Dataset ID** NA
+
+**CCIEA timeseries ID** NA
+
+**Region** `{r} rgn_lbl`
+
+
+**Public availability statement** Source data are publicly available.
+
+**Data sources** 
+
+
+**Additional Information**
+
+
+
+**Figures**

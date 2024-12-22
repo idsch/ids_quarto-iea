@@ -1,3 +1,4 @@
+
 ---
 lightbox: true
 bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib

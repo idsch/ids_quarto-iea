@@ -1,0 +1,20 @@
+{
+  "index.qmd": {
+    "index.html": "07d45cf0"
+  },
+  "BasinScaleIndicators.qmd": {
+    "BasinScaleIndicators.html": "3a73e22f"
+  },
+  "JanFebNPH.qmd": {
+    "JanFebNPH.html": "6bac7ade"
+  },
+  "SSTspatial.qmd": {
+    "SSTspatial.html": "7399ff41"
+  },
+  "MarineHeatwaves.qmd": {
+    "MarineHeatwaves.html": "4e17a18f"
+  },
+  "HabitatCompressionIndex.qmd": {
+    "HabitatCompressionIndex.html": "1996c3a2"
+  }
+}
