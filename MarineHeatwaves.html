@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Marine Heatwaves – OC Environement Update for ESR</title>
+<title>4&nbsp; Marine Heatwaves – 2024 Ocean Conditions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,6 +84,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./HabitatCompressionIndex.html" rel="next">
 <link href="./SSTspatial.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">OC Environement Update for ESR</a> 
+      <a href="./">2024 Ocean Conditions</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -179,6 +200,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./MarineHeatwaves.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Marine Heatwaves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HabitatCompressionIndex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Habitat Compression Index</span></span></a>
   </div>
 </li>
       </ul>
@@ -243,37 +270,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>rgn_lbl_mi <span class="ot">&lt;-</span> rgn_lbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p><strong>Description</strong></p>
-<p><strong>Indicator Category</strong> Climate and Ocean Drivers</p>
-<p><strong>Data Steward</strong> Leising</p>
-<p><strong>Erddap Dataset ID</strong></p>
-<ul>
-<li><em>Cover</em> &nbsp; &nbsp; &nbsp; &nbsp; cciea_OC_MHW</li>
-<li><em>Area</em> &nbsp; &nbsp; &nbsp; &nbsp; cciea_OC_MHW</li>
-<li><em>Intensity</em> &nbsp; &nbsp; cciea_OC_MHW</li>
-</ul>
-<p><strong>CCIEA timeseries ID</strong></p>
-<ul>
-<li><em>Cover</em> &nbsp; &nbsp; &nbsp; &nbsp; cciea_OC_MHW_HC</li>
-<li><em>Area</em> &nbsp; &nbsp; &nbsp; &nbsp; cciea_OC_MHW_MA</li>
-<li><em>Intensity</em> &nbsp; &nbsp; cciea_OC_MHW_MI</li>
-</ul>
-<p><strong>Region</strong></p>
-<ul>
-<li><em>Cover</em> &nbsp; &nbsp; &nbsp; &nbsp; NA</li>
-<li><em>Area</em> &nbsp; &nbsp; &nbsp; NA</li>
-<li><em>Intensity</em> &nbsp; &nbsp; NA</li>
-</ul>
+<p><strong>Description</strong> Marine heatwaves (MHW) occur when ocean temperatures are much warmer than usual for an extended period of time; they are specifically defined by the difference between the current temperature and the expected temperature for a specific location and time of year [1]. MHWs are a growing field of study worldwide because of their effects on ecosystem structure, biodiversity, and regional economies.</p>
+<p><strong>Indicator Category</strong> &nbsp; &nbsp; Climate and Ocean Drivers</p>
+<p><strong>Data Steward</strong> &nbsp; &nbsp; Leising</p>
+<p><strong>Erddap Dataset ID</strong> &nbsp; &nbsp; cciea_OC_MHW, cciea_OC_MHW, cciea_OC_MHW</p>
+<p><strong>CCIEA timeseries ID</strong> &nbsp; &nbsp; cciea_OC_MHW_HC, cciea_OC_MHW_MA, cciea_OC_MHW_MI</p>
+<p><strong>Region</strong> &nbsp; &nbsp; NA, NA, NA</p>
 <p><strong>Additional Information</strong></p>
-<p>There is growing recognition that marine heatwaves can have strongly disruptive impacts on the CCE (e.g., Morgan et al.&nbsp;2019). Based on an analysis of sea surface temperature anomalies (SSTa) obtained from satellite measurements (OISST); we define marine heatwaves as 1.0 times when normalized SSTa &gt;1.29 s.d. (90th percentile) of the long-term SSTa time series at a location, and 2. lasts for &gt;5 days; which are analogous to the thresholds suggested in Hobday et al.&nbsp;(2016). Here, we further report on statistics concerning large heatwaves (LHW) which were tracked through space and time, with LHW defined as those heatwaves with an area &gt; 400,000 km2 (these denote the top 20% of all heatwaves by area as measured since 1982 when satellite data became available for tracking; Leising, in revision).</p>
+<p>There is growing recognition that marine heatwaves can have strongly disruptive impacts on the CCE <span class="citation" data-cites="morgan2019recent">(<a href="#ref-morgan2019recent" role="doc-biblioref">Morgan et al. 2019</a>)</span>. Based on an analysis of sea surface temperature anomalies (SSTa) obtained from satellite measurements (OISST); we define marine heatwaves as 1.0 times when normalized SSTa &gt;1.29 s.d. (90th percentile) of the long-term SSTa time series at a location, and 2. lasts for &gt;5 days; which are analogous to the thresholds suggested in <span class="citation" data-cites="hobday2016hierarchical">Hobday et al. (<a href="#ref-hobday2016hierarchical" role="doc-biblioref">2016</a>)</span>. Here, we further report on statistics concerning large heatwaves (LHW) which were tracked through space and time, with LHW defined as those heatwaves with an area &gt; 400,000 km2 (these denote the top 20% of all heatwaves by area as measured since 1982 when satellite data became available for tracking.</p>
 <p>The underlying climatology used for SST anomaly analysis has changed from 1982-2010, to now encompass 1982-2020; hence small changes in the retrospective analysis of tracked heatwaves reported more recently as compared to previous reports.</p>
 <p><strong>Figures</strong></p>
-<div id="fig-oni_pdo_npgo_M" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mhw_M" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-oni_pdo_npgo_M-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-mhw_M-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="plots/oc_mhw_heatwave_cover_sum_area_intensity_Monthly.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;4.1: "><img src="plots/oc_mhw_heatwave_cover_sum_area_intensity_Monthly.png" class="img-fluid figure-img" style="width:70.0%"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-oni_pdo_npgo_M-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-mhw_M-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.1
 </figcaption>
 </figure>
@@ -284,12 +296,12 @@ Figure&nbsp;4.1
 <div aria-describedby="fig-mhw_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-mhw_S" style="flex-basis: 32.9%;justify-content: flex-start;">
-<div id="fig-oni_S" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mhw_hc_S" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-oni_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-mhw_hc_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="plots/oc_mhw_heatwave_cover_Season.png" class="lightbox" data-gallery="fig-mhw_S" title="Figure&nbsp;4.2&nbsp;(a): Heatwave Cover"><img src="plots/oc_mhw_heatwave_cover_Season.png" class="img-fluid figure-img" data-ref-parent="fig-mhw_S"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-oni_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-mhw_hc_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Heatwave Cover
 </figcaption>
 </figure>
@@ -299,12 +311,12 @@ Figure&nbsp;4.1
 <p>&nbsp;</p>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-mhw_S" style="flex-basis: 32.9%;justify-content: flex-start;">
-<div id="fig-pdo_S" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mhw_ma_S" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-pdo_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-mhw_ma_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="plots/oc_mhw_sum_area_Season.png" class="lightbox" data-gallery="fig-mhw_S" title="Figure&nbsp;4.2&nbsp;(b): Sum Area"><img src="plots/oc_mhw_sum_area_Season.png" class="img-fluid figure-img" data-ref-parent="fig-mhw_S"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pdo_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-mhw_ma_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Sum Area
 </figcaption>
 </figure>
@@ -314,12 +326,12 @@ Figure&nbsp;4.1
 <p>&nbsp;</p>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-mhw_S" style="flex-basis: 32.9%;justify-content: flex-start;">
-<div id="fig-npgo_S" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mhw_mi_S" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-npgo_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-mhw_mi_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="plots/oc_mhw_intensity_Season.png" class="lightbox" data-gallery="fig-mhw_S" title="Figure&nbsp;4.2&nbsp;(c): Intensity"><img src="plots/oc_mhw_intensity_Season.png" class="img-fluid figure-img" data-ref-parent="fig-mhw_S"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-npgo_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-mhw_mi_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c) Intensity
 </figcaption>
 </figure>
@@ -327,21 +339,28 @@ Figure&nbsp;4.1
 </div>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-mhw_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mhw_S-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Seasonal averages of the monthly MHW time series.
 </figcaption>
 </figure>
 </div>
 <p><strong>2024 Conditions</strong></p>
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Monthly MHW sum area <a href="#fig-mhw_M" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> was above the long-term mean during summer and fall 2024.</li>
+<li>Winter, Spring and Summer MHW sum area <a href="#fig-mhw_ma_S" class="quarto-xref">Figure&nbsp;<span>5.1 (b)</span></a> had 2024 values lower than 2023.</li>
+<li>Heat wave cover during the winter 2024 <a href="#fig-mhw_hc_S" class="quarto-xref">Figure&nbsp;<span>5.1 (a)</span></a> was above 1 sd, this probably can be attributed to El Niño elevating coastal temperatures <a href="SSTspatial.html#fig-sst_spatial_winter" class="quarto-xref">Figure&nbsp;<span>3.2 (a)</span></a>.</li>
 </ul>
 <p><strong>References</strong></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-hobday2016hierarchical" class="csl-entry" role="listitem">
+Hobday, Alistair J, Lisa V Alexander, Sarah E Perkins, Dan A Smale, Sandra C Straub, Eric CJ Oliver, Jessica A Benthuysen, et al. 2016. <span>“A Hierarchical Approach to Defining Marine Heatwaves.”</span> <em>Progress in Oceanography</em> 141: 227–38.
+</div>
+<div id="ref-morgan2019recent" class="csl-entry" role="listitem">
+Morgan, Cheryl A, Brian R Beckman, Laurie A Weitkamp, and Kurt L Fresh. 2019. <span>“Recent Ecosystem Disturbance in the Northern California Current.”</span> <em>Fisheries</em> 44 (10): 465–74.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -768,6 +787,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./HabitatCompressionIndex.html" class="pagination-link" aria-label="Habitat Compression Index">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Habitat Compression Index</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
