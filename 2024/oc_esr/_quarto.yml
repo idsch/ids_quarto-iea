@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "OC Environement Update for ESR"
-  author: "Isaac Schroeder"
+  title: "2024 Ocean Conditions"
+  author: "I. Schroeder"
   date: "12/07/2024"
   chapters:
     - index.qmd

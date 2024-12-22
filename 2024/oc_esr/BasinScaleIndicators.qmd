@@ -43,33 +43,21 @@ rgn_lbl_npgo <- rgn_lbl
 
 # Basin-Scale Indicators
 
-**Description**
+**Description**  &nbsp; &nbsp;
 The CCLME is driven by atmosphere–ocean energy exchange that occurs on many temporal and spatial scales. 
 Large-scale variability is represented by three indices: the status of the equatorial El Niño–Southern Oscillation (ENSO), described by the Oceanic Niño Index (ONI, <https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php>); the Pacific Decadal Oscillation [PDO, @Mantua1997]; and the North Pacific Gyre Oscillation [NPGO, @DiLorenzo2008]. 
 Positive ONI and PDO values and negative NPGO values usually denote conditions that lead to low CCLME productivity, whereas negative ONI and PDO values and positive NPGO values are associated with periods of high CCE productivity. 
 
 
-**Indicator Category** `{r} vec2_oni[['Component_Section']]`
+**Indicator Category**  &nbsp; &nbsp; `{r} vec2_oni[['Component_Section']]`
  
-**Data Steward** `{r} vec2_oni[['PI']]`
+**Data Steward**  &nbsp; &nbsp; `{r} vec2_oni[['PI']]`
 
-**Erddap Dataset ID** 
+**Erddap Dataset ID**   &nbsp; &nbsp; `{r} ds_id_oni`, `{r} ds_id_pdo`, `{r} ds_id_npgo`
 
-+ *ONI*   &nbsp; &nbsp;  &nbsp; &nbsp; `{r} ds_id_oni`
-+ *PDO*   &nbsp; &nbsp;  &nbsp;  `{r} ds_id_pdo`
-+ *NPGO*   &nbsp; &nbsp;  `{r} ds_id_npgo`
+**CCIEA timeseries ID**   &nbsp; &nbsp; `{r} ds_id_lbl_oni`, `{r} ds_id_lbl_pdo`, `{r} ds_id_lbl_npgo`
 
-**CCIEA timeseries ID** 
-
-+ *ONI*  &nbsp; &nbsp;  &nbsp; &nbsp; `{r} ds_id_lbl_oni`
-+ *PDO*  &nbsp; &nbsp;  &nbsp;  `{r} ds_id_lbl_pdo`
-+ *NPGO*  &nbsp; &nbsp;  `{r} ds_id_lbl_npgo`
-
-**Region**
-
-+  *ONI*  &nbsp; &nbsp;  &nbsp; &nbsp; `{r} rgn_lbl_oni`
-+  *PDO*  &nbsp; &nbsp;  &nbsp; `{r} rgn_lbl_pdo`
-+  *NPGO*  &nbsp; &nbsp; `{r} rgn_lbl_npgo`
+**Region**  &nbsp; &nbsp; `{r} rgn_lbl_oni`, `{r} rgn_lbl_pdo`, `{r} rgn_lbl_npgo`
 
 **Additional Information**
 

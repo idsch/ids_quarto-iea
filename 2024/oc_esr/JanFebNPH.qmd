@@ -39,28 +39,34 @@ Variations in the areal extent of the North Pacific High (NPH) during the winter
 The January and February average of the NPH area can be used as a "preconditioning" index for ecosystem responses in the spring.
 
 
-**Indicator Category** `{r} vec2_nph[['Component_Section']]`
+**Indicator Category** &nbsp; &nbsp; 
+`{r} vec2_nph[['Component_Section']]`
  
-**Data Steward** `{r} vec2_nph[['PI']]`
+**Data Steward** &nbsp; &nbsp; 
+`{r} vec2_nph[['PI']]`
 
-**Erddap Dataset ID**
+**Erddap Dataset ID** &nbsp;  &nbsp;
+`{r} ds_id_jf`,  `{r} ds_id_nph`
 
-+ *Jan-Feb NPH*   &nbsp; &nbsp;  &nbsp;  `{r} ds_id_jf`
-+ *NPH*   &nbsp; &nbsp;  `{r} ds_id_nph`
+**CCIEA timeseries ID** &nbsp; &nbsp; 
+`{r} ds_id_lbl_jf`,  `{r} ds_id_lbl_nph`
 
-**CCIEA timeseries ID** 
+**Region** &nbsp; &nbsp; 
+`{r} rgn_lbl_jf`, `{r} rgn_lbl_nph`
 
-+ *Jan-Feb NPH*  &nbsp; &nbsp;  &nbsp; &nbsp; `{r} ds_id_lbl_jf`
-+ *NPH*  &nbsp; &nbsp;  &nbsp;  `{r} ds_id_lbl_nph`
+**Public availability statement** &nbsp; &nbsp; 
+Source data are publicly available.
 
+**Data sources** &nbsp; &nbsp
+The  U.S. Navy Fleet Numerical Meteorology and Oceanography Center (FNMOC) to take advantage of the Navy's global oceanographic and meteorological databases. 
+FNMOC produces operational forecasts of the state of the atmosphere and the ocean several times daily and maintains archives of several important parameters, such as sea level
+pressure and temperature.
+The NPH area is derived from FNMOC Sea Level Pressure (SLP) monthly means.
+The SLP data are available at <https://upwell.pfeg.noaa.gov/erddap/griddap/erdlasFnWPr.html>.
 
-**Region**
-
-+  *Jan-Feb NPH* &nbsp; &nbsp;  &nbsp; &nbsp; `{r} rgn_lbl_jf`
-+  *NPH*  &nbsp; &nbsp;  &nbsp; `{r} rgn_lbl_nph`
-
-**Additional Information**
+**Additional Information** &nbsp; &nbsp
 During the winter, periods of upwelling or, farther north, reduced downwelling can limit stratification and facilitate introduction of nutrients to the surface, acting to precondition the ecosystem for increased production in the spring [@Schroeder2009; @Black2010]. The area of sea level pressure associated with the North Pacific High (NPH) can be used as an index of this winter preconditioning [@Schroeder2013]. 
+
 
 
 **Figures**
@@ -70,7 +76,7 @@ During the winter, periods of upwelling or, farther north, reduced downwelling c
 
 Area of high atmospheric pressure of the North Pacific High averaged over January and February. 
 The area is the areal extent of the 1020 hPa isobar located in the eastern North Pacific [@Schroeder2013].
-FNMOC six-hourly data used to find the area of the NPH is available at https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdlasFnPres6. 
+FNMOC six-hourly data used to find the area of the NPH is available at <https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdlasFnPres6>.
 :::
 
 <br>
@@ -93,7 +99,7 @@ Monthly values of the North Pacific High (NPH) area starting 1967 and ending: No
 
 ::: {#fig-nph_S}
 
-![](plots/oc_nph_Season.png){width=50%}
+![](plots/oc_nph_Season.png){width=40%}
 
 Seasonal values of the North Pacific High (NPH) area starting 1967 and ending `{r} cciea_yr`. 
 
