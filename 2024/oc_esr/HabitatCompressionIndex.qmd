@@ -1,15 +1,17 @@
 ---
-bibliography: /home/isaac/Work/IEA/2024/tech_document/tech_document.bib
+lightbox: true
+bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib
 format:
-  html: 
-    code-fold: true
-
+ html:
+  code-fold: true
+  self-contained: true
 ---
 
 # Habitat Compression Index
 
 
 ```{r}
+cciea_yr <- 2024
 ds_id <- 'cciea_OC_HCI'	   
 ts_id_list = list('cciea_OC_HCI1', 'cciea_OC_HCI2', 'cciea_OC_HCI3', 'cciea_OC_HCI4')
 
@@ -32,13 +34,38 @@ source("script_region.R")
 
 **Region** `{r} rgn_lbl`
 
-**References** @Santora2020, @Schroeder2022
-
 
 **Public availability statement** Source data are publicly available.
 
 **Data sources** Surface temperature data are the 2 m temperature levels of the University of California Santa Cruz 31-year historical reanalysis (<https://oceanmodeling.ucsc.edu/reanalccs31/>) and near-real-time (NRT; <https://oceanmodeling.ucsc.edu/ccsnrt/>) data-assimilative models.
 
-**Data extraction** 
 
-**Data analysis**
+**Additional Information**
+
+@santora2020habitat
+
+@schroeder2022
+
+**Figures**
+
+
+::: {#fig-mhw_S layout-ncol=1, layout="[[1], [1], [1], [1]]"  }
+
+![Region 1 (43.5-48°N)](plots/oc_hci_rgn1_Month.png){#fig-hci1_M}
+
+![Region 2 (40-43.5°N)](plots/oc_hci_rgn2_Month.png){#fig-hci2_M}
+
+![Region 3 (35.5-40°N)](plots/oc_hci_rgn3_Month.png){#fig-hci3_M}
+
+![Region 4 (30-35.5°N)](plots/oc_hci_rgn4_Month.png){#fig-hci4_M}
+
+Monthly habitat compression index (HCI) for January 1980 to November `{r} cciea_yr`. 
+The index describes the contraction and expansion of cool shelf habitat between the latitude range and from the coast out to 150 km offshore. 
+Each month the area of water below a temperature threshold is calculated where a value of 0 represents no cool water in the region and a value of 1 indicates the whole area is comprised of cool water. 
+Monthly resolved temperature thresholds are the spatial mean of temperature values between the latitude range and from the coast out to 75 km offshore over a climatological time period of 1980-2010.
+:::
+
+
+
+
+**`{r} cciea_yr` Conditions**
