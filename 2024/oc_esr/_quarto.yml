@@ -16,6 +16,9 @@ book:
       - SSTspatial.qmd
       - MarineHeatwaves.qmd
       - HabitatCompressionIndex.qmd
+      - DepthTimeTemp.qmd
+      - DepthTimeTempGlider.qmd
+      - Upwelling.qmd
 
       
 format:

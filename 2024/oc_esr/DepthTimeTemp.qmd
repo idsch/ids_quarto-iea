@@ -15,7 +15,7 @@ cciea_yr <- 2024
 
 
 ds_id <- 'cciea_OC_ARG'
-ts_id_list = list('cciea_OC_ARG1', 'cciea_OC_ARG2')
+ts_id_list = list('cciea_OC_ARG2')
 
 
 # Source some local code
@@ -23,7 +23,9 @@ source("script_region.R")
 
 ```
 
-**Description** The Habitat Compression Index (HCI) is the area of cool habitat along the coast, which is suitable for a diverse and productive portion of the CCE food web. HCI is estimated in four biogeographic provinces along the shelf within the CCE.
+**Description**
+Time versus depth profiles of water temperatures off of Newport, Oregon and San Diego, California demonstrate the extent of recent warm and cool anomalies into the water column, as well as spatial and temporal dynamics of these anomalies.
+
 
 **Metafile name** `{r} fn_meta`
  
@@ -40,7 +42,9 @@ source("script_region.R")
 
 **Public availability statement** Source data are publicly available.
 
-**Data sources** 
+**Data sources**
+Newport Hydrographic (NH) line temperature data are from J. Fisher, NMFS/NWFSC, OSU.
+CalCOFI hydrographic line data are from <https://calcofi.org/data.html>.
 
 
 **Additional Information**
@@ -48,3 +52,24 @@ source("script_region.R")
 
 
 **Figures**
+
+::: {#fig-tz_nh25_9330}
+
+![](plots/oc_z_Temperature_NH25_CTD_933_300_contour_fill_NRT_same_ylim.png){width=100%}
+
+Time–depth temperature anomalies for hydrographic stations NH25 (July 1997 to October `{r} cciea_yr`. ) and CalCOFI 93.30 (January 1997 to August `{r} cciea_yr`. ).
+The NH25 (top plot) temperature anomalies are monthly means and the time interval is one month (i.e., 12 values per year).
+The CalCOFI (bottom plot) temperature anomalies are quarterly means and the time intervals are seasons (i.e., four values per year).
+Months or quarters not sampled are marked with a black circle along the top axis; missing samples are filled using bi-linear interpolation.
+Sampling missed due to Covid restrictions are marked with a black triangle.
+The spring 2020 and winter 2022 CalCOFI temperature profiles were filled using daily mean temperature data on April 15, 2020 and January 31, 2022 from a data assimilative ocean model (NRT ROMS; <https://oceanmodeling.ucsc.edu/ccsnrt/>).
+
+
+:::
+
+
+**`{r} cciea_yr` Conditions**
+
++ At NH25 influence of the winter 2023-`{r} cciea_yr` El Niño has greatest subsurface extent in Jan `{r} cciea_yr` @fig-tz_nh25_9330.
++ NH25 temperature anomalies over 0-50 m not as high as previous El Niño events in 1998 and 2016.
++ Temperature anomalies at station CalCOFI 93-30 over 0-200 m not as high as previous El Niño events in 1998 and 2016.

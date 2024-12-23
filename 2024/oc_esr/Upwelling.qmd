@@ -1,0 +1,123 @@
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+  self-contained: true
+---
+
+# Regional Upwelling Indices
+
+
+```{r}
+cciea_yr <- 2024
+
+ds_id <- 'cciea_OC_CUTI'	   
+ts_id_list = list('cciea_OC_CUTI_45', 'cciea_OC_CUTI_39', 'cciea_OC_CUTI_33')
+source("script_region.R")
+ds_id_cuti <- ds_id
+vec2_cuti <- vec2
+ds_id_lbl_cuti <- ds_id_lbl
+rgn_lbl_cuti <- rgn_lbl
+
+ds_id <- 'cciea_OC_BEUTI'	   
+ts_id_list = list('cciea_OC_BEUTI_45', 'cciea_OC_BEUTI_39', 'cciea_OC_BEUTI_33')
+source("script_region.R")
+ds_id_beuti <- ds_id
+vec2_beuti <- vec2
+ds_id_lbl_beuti <- ds_id_lbl
+rgn_lbl_beuti <- rgn_lbl
+	
+
+```
+**Description**
+Seasonal cross-shore gradients in sea level atmospheric pressure produce the alongshore winds that drive coastal upwelling and downwelling in the CCE.
+Upwelling, driven by equatorward-blowing winds, is a physical process of lifting cold, nutrient- rich water from deep in the ocean to the surface.
+Upwelling fuels the high seasonal primary production at the base of the CCE food web.
+The timing, strength, and duration of upwelling vary greatly along the coast.
+
+**Metafile name** `{r} fn_meta`
+ 
+**Indicator Category**
+`{r} vec2[['Component_Section']]`
+ 
+**Data Steward**
+`{r} vec2[['PI']]`
+
+**Erddap Dataset ID**
+`{r} ds_id_cuti`, `{r} ds_id_beuti` 
+
+**CCIEA timeseries ID** 
+
+**Region** `{r} rgn_lbl_cuti`, `{r} rgn_lbl_beuti`
+
+
+**Public availability statement** Source data are publicly available.
+
+**Data sources**
+CUTI and BEUTI are updated with data from the near-real-time (NRT; <https://oceanmodeling.ucsc.edu/ccsnrt/>) data-assimilative models.
+
+Bakun UI is derived from geostrophic estimates fro winds derived from FNMOC sealevel pressure estimates.
+
+**Additional Information**
+Estimates of coastal upwelling, specifically the vertical water volume transport (Coastal Upwelling Transport Index; CUTI) and the vertical nitrate flux (Biologically Effective Upwelling Transport Index; BEUTI).
+We now use these indices to describe upwelling in the CCE reports, as they better represent surface winds, ocean circulation, and subsurface variability. CUTI provides more accurate estimates of vertical transport of water.
+BEUTI provides additional information about the nature of the upwelled water (e.g., its nitrate content) that can be linked to ecological processes such as productivity @jacox2018coastal. 	     
+Daily values of CUTI and BEUTI are derived from numerical model outputs described in @jacox2018coastal.
+Detailed information about these indices can be found at <https://mjacox.com/upwelling-indices/>.
+
+
+**Figures**
+
+
+::: {#fig-cuti_beuti_ts layout-ncol=3, layout="[1]"  }
+
+![](plots/beuti_cuti_daily2024_10roll_same_ylim.png){width=80%}
+
+Daily values of Coastal Upwelling Transport Index (CUTI; left) and Biologically Effective Upwelling Transport Index (BEUTI; right) starting January 1 to October 30, `{r} cciea_yr`.
+Daily data are smoothed with a 10-day running mean.
+Both time series are shown in relation to the 1988–`{r} cciea_yr` climatology average (blue dashed line), ±1 SD (shaded area), at latitudes 33°N, 39°N, and 45°N. 
+:::
+
+	
+
+::: {#fig-cuti_S layout-ncol=3, layout="[30, -2, 30, -2, 30]"  }
+
+![Cuti 45°N](plots/oc_cuti_45_Season.png){#fig-cuti_45_S}
+
+![Cuti 39°N](plots/oc_cuti_39_Season.png){#fig-cuti_39_S}
+
+![Cuti 33°N](plots/oc_cuti_33_Season.png){#fig-cuti_33_S}
+
+Seasonal averages of CUTI.
+:::
+
+
+::: {#fig-beuti_S layout-ncol=3, layout="[30, -2, 30, -2, 30]"  }
+
+![Beuti 45°N](plots/oc_beuti_45_Season.png){#fig-beuti_45_S}
+
+![Beuti 39°N](plots/oc_beuti_39_Season.png){#fig-beuti_39_S}
+
+![Beuti 33°N](plots/oc_beuti_33_Season.png){#fig-beuti_33_S}
+
+Seasonal averages of BEUTI.
+:::
+
+
+::: {#fig-cui layout-ncol=3, layout="[1]"  }
+
+![](plots/oc_CUI_bakun.png){width=80%}
+
+CUI curves for the Bakun UI, which for each year is the cumulative sum of the daily UI values.
+The historic record starting in 1967 is shown in gray and the last 4 years are colored.
+The CUI figure used in the CalCOFI State of the CC report.
+
+:::
+
+
+**`{r} cciea_yr` Conditions**
++ Upwelling during January 2024 (@fig-cuti_beuti_ts, @fig-cui) was lower than average due to the  2023-24 El Niño influence on the CCS (@fig-oni_S).
++ At 39°N upwelling was mostly below average for winter and spring 2024 (@fig-cuti_beuti_ts, @fig-cui), resulting in nitrate flux to be below average (@fig-cuti_beuti_ts, @fig_beuti_S),
++ Summer 2024 upwelling (@fig-cuti_S) was average for all latitidues and nitrate flux (@fig-beuti-S) at or near 1 sd above the long-term mean.

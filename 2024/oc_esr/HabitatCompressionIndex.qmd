@@ -1,0 +1,88 @@
+---
+lightbox: true
+bibliography: /home/isaac/Work/IEA/tech_document/ESR-Technical-Documentation/ESR-Technical-Documentation/esr-bibliography.bib
+format:
+ html:
+  code-fold: true
+  self-contained: true
+---
+
+# Habitat Compression Index
+
+
+```{r}
+cciea_yr <- 2024
+ds_id <- 'cciea_OC_HCI'	   
+ts_id_list = list('cciea_OC_HCI1', 'cciea_OC_HCI2', 'cciea_OC_HCI3', 'cciea_OC_HCI4')
+
+
+# Source some local code
+source("script_region.R")
+
+```
+**Description** The Habitat Compression Index (HCI) is the area of cool habitat along the coast, which is suitable for a diverse and productive portion of the CCE food web. HCI is estimated in four biogeographic provinces along the shelf within the CCE.
+
+**Metafile name** `{r} fn_meta`
+ 
+**Indicator Category** `{r} vec2[['Component_Section']]`
+ 
+**Data Steward** `{r} vec2[['PI']]`
+
+**Erddap Dataset ID** `{r} ds_id`
+
+**CCIEA timeseries ID** `{r} ds_id_lbl`
+
+**Region** `{r} rgn_lbl`
+
+
+**Public availability statement** Source data are publicly available.
+
+**Data sources** Surface temperature data are the 2 m temperature levels of the University of California Santa Cruz 31-year historical reanalysis (<https://oceanmodeling.ucsc.edu/reanalccs31/>) and near-real-time (NRT; <https://oceanmodeling.ucsc.edu/ccsnrt/>) data-assimilative models.
+
+
+**Additional Information**
+The HCI is defined over 4 regions along the coast (43.5-48°N, 40-43.5°N, 35.5-40°N, and 30-35.5°N).
+The HCI is calculated the same for each region and is defined as the area of cool monthly averaged sea temperatures at a depth of 2 m that fall below a temperature threshold, in a region extending from the coast to 150 km offshore between the latitude ranges of the 4 regions.
+Each month has a unique temperature threshold that is defined as the spatial average of all 2 m temperatures from the coast to 75 km offshore in the latitudinal region for a given month over a climatological period of 1980 to 2010 [@santora2020habitat, @schroeder2022].
+
+**Figures**
+
+
+::: {#fig-hci_M layout-ncol=2, layout="[[3, -1, 3], [3, -1, 3]]"  }
+
+![Region 1 (43.5-48°N)](plots/oc_hci_rgn1_Month.png){#fig-hci1_M}
+
+![Region 2 (40-43.5°N)](plots/oc_hci_rgn2_Month.png){#fig-hci2_M}
+
+![Region 3 (35.5-40°N)](plots/oc_hci_rgn3_Month.png){#fig-hci3_M}
+
+![Region 4 (30-35.5°N)](plots/oc_hci_rgn4_Month.png){#fig-hci4_M}
+
+Monthly habitat compression index (HCI) for January 1980 to November (`{r} cciea_yr`). 
+The index describes the contraction and expansion of cool shelf habitat between the latitude range and from the coast out to 150 km offshore. 
+Each month the area of water below a temperature threshold is calculated where a value of 0 represents no cool water in the region and a value of 1 indicates the whole area is comprised of cool water. 
+Monthly resolved temperature thresholds are the spatial mean of temperature values between the latitude range and from the coast out to 75 km offshore over a climatological time period of 1980-2010.
+:::
+
+
+::: {#fig-hci_S layout-ncol=2, layout="[[3, -1, 3], [3, -1, 3]]"  }
+
+![Region 1 (43.5-48°N)](plots/oc_hci_rgn1_Season.png){#fig-hci1_S}
+
+![Region 2 (40-43.5°N)](plots/oc_hci_rgn2_Season.png){#fig-hci2_S}
+
+![Region 3 (35.5-40°N)](plots/oc_hci_rgn3_Season.png){#fig-hci3_S}
+
+![Region 4 (30-35.5°N)](plots/oc_hci_rgn4_Season.png){#fig-hci4_S}
+
+Seasonal averages of HCI.
+:::
+
+
+
+
+**`{r} cciea_yr` Conditions**
+
++ For regions 1-3, the HCI during Winter 2024 (@fig-hci_M, @fig-hci_S) was zero due to the  2023-24 El Niño influence on the CCS (@fig-oni_S).
++ The influence of 2023-24 El Niño was not as great for the HCI in region 4 (@fig-hci4_S).
++ Spring 2024 HCI values average (@fig-hci_S).
